@@ -1,0 +1,20 @@
+meta {
+  name: 5 - Cadastrar dados inválidos (400)
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/despesas
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "descricao": "",
+    "categoria": "Utilidades",
+    "valor": 0,
+    "dataDespesa": "2026-11-10"
+  }
+}

@@ -1,0 +1,20 @@
+meta {
+  name: 4 - Atualizar despesa (200)
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/despesas/{{id}}
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "descricao": "Conta de energia elétrica - sede",
+    "categoria": "Utilidades",
+    "valor": 420.00,
+    "dataDespesa": "2026-11-12"
+  }
+}

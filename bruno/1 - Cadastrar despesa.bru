@@ -1,0 +1,24 @@
+meta {
+  name: 1 - Cadastrar despesa (201)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/despesas
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "descricao": "Conta de energia elétrica",
+    "categoria": "Utilidades",
+    "valor": 350.75,
+    "dataDespesa": "2026-11-10"
+  }
+}
+
+script:post-response {
+  if (res.status === 201) { bru.setEnvVar("id", res.body.id); }
+}
